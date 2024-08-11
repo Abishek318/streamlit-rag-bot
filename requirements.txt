@@ -1,10 +1,9 @@
 streamlit
-langchain_community
-langchain-groq
-langchain_chroma
-langchain
-python-dotenv
-streamlit
-langchain-huggingface
-PyPDF2
-pypdf
+langchain_community==0.2.11
+langchain-groq==0.1.9
+langchain_chroma==0.1.2
+langchain==0.2.12
+python-dotenv== 1.0.1
+langchain-huggingface==0.0.3
+PyPDF2==3.0.1
+pypdf==4.3.1
