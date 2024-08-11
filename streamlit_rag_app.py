@@ -156,7 +156,7 @@ def main_screen():
     st.title("📚 PDF Chat App")
     st.write("Welcome! Please upload your PDF file to begin.")
 
-    uploaded_file = st.file_uploader("Choose a PDF file (max 1MB)", type="pdf")
+    uploaded_file = st.file_uploader("Choose a PDF file (max 2MB)", type="pdf")
     
     if uploaded_file is not None:
         if uploaded_file.size <= 2000000:  # 2MB = 2,000,000 bytes
@@ -180,7 +180,7 @@ def main_screen():
             st.error("File size exceeds 2MB. Please upload a smaller file.")
 
 def chat_screen():
-    st.title("💬 Chat about your PDF")
+    st.title("💬 Talk to your PDF")
     
     st.sidebar.title("PDF Info")
     st.sidebar.info(f"PDF: {st.session_state.pdf_name}")
