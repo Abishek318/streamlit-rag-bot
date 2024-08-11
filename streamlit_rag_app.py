@@ -5,7 +5,7 @@ import uuid
 from dotenv import load_dotenv
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_chroma import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -15,6 +15,13 @@ from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 import PyPDF2
+import logging 
+
+# Creating an object
+logger = logging.getLogger()
+
+# Setting the threshold of logger to DEBUG
+logger.setLevel(logging.DEBUG)
 
 load_dotenv()
 
@@ -133,12 +140,13 @@ def extract_text_from_pdf(pdf_file,session_id):
         if not embeddings:
             raise ValueError("Failed to initialize embeddings.")
         
-        vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings,collection_name=session_id)
+        vectorstore = FAISS.from_documents(splits, embeddings)
         retriever = vectorstore.as_retriever()
 
         os.unlink(tmp_file_path)  # Delete the temporary file
         return retriever
     except Exception as e:
+        logger.error(e,exc_info=True)
         st.error(f"Error processing PDF: {str(e)}")
         if 'tmp_file_path' in locals():
             os.unlink(tmp_file_path)  # Ensure temporary file is deleted even if an error occurs
