@@ -180,7 +180,7 @@ def main_screen():
         #     st.error("File size exceeds 2MB. Please upload a smaller file.")
 
 def chat_screen():
-    st.title("💬 Chat about your PDF")
+    st.title("💬 Talk to your PDF")
     
     st.sidebar.title("PDF Info")
     st.sidebar.info(f"PDF: {st.session_state.pdf_name}")

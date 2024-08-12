@@ -19,7 +19,7 @@
   },
   "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user streamlit;pip3 install --upgrade protobuf opentelemetry-api opentelemetry-sdk; echo '✅ Packages installed and Requirements met'",
   "postAttachCommand": {
-    "server": "streamlit run streamlit_rag_app.py --server.enableCORS false --server.enableXsrfProtection false"
+    "server": "streamlit run streamlit_rag_app.py --server.enableCORS false --server.enableXsrfProtection false --server.maxUploadSize 2"
   },
   "portsAttributes": {
     "8501": {
