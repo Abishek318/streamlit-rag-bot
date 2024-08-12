@@ -29,7 +29,7 @@ load_dotenv()
 @st.cache_resource
 def get_llm():
     try:
-        return ChatGroq(model="llama3-8b-8192")
+        return ChatGroq(model="llama-3.1-8b-instant")
     except Exception as e:
         st.error(f"Error initializing ChatGroq: {str(e)}")
         return None
@@ -156,10 +156,10 @@ def main_screen():
     st.title("📚 PDF Chat App")
     st.write("Welcome! Please upload your PDF file to begin.")
 
-    uploaded_file = st.file_uploader("Choose a PDF file (max 1MB)", type="pdf")
+    uploaded_file = st.file_uploader("Select a PDF file with minimal size for a faster response.", type="pdf")
     
     if uploaded_file is not None:
-        if uploaded_file.size <= 2000000:  # 2MB = 2,000,000 bytes
+        # if uploaded_file.size <= 2000000:  # 2MB = 2,000,000 bytes
             with st.spinner("Processing PDF..."):
                 session_id=str(uuid.uuid4())
                 retriever = extract_text_from_pdf(uploaded_file,session_id)
@@ -176,8 +176,8 @@ def main_screen():
                         st.error("Failed to create conversation chain. Please try again.")
                 else:
                     st.error("Failed to process the PDF. Please try another file.")
-        else:
-            st.error("File size exceeds 2MB. Please upload a smaller file.")
+        # else:
+        #     st.error("File size exceeds 2MB. Please upload a smaller file.")
 
 def chat_screen():
     st.title("💬 Chat about your PDF")
