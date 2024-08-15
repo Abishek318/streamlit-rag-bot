@@ -18,7 +18,7 @@ Key features:
 - Open-source embeddings for efficient text representation
 - Streamlit-based user interface for easy interaction
 
-![PDF Upload Interface](path_to_pdf_upload_image.png)
+![PDF Upload Interface](sample_image/pdf_uplod.png)
 
 ## Technologies Used
 
@@ -55,13 +55,13 @@ Key features:
    streamlit run streamlit_rag_app.py
    ```
 
-2. Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:8501`).
+2. Open your web browser and go to the URL provided by Streamlit (usually `http://localhost:2000`).
 
 3. Upload a PDF file using the file uploader.
 
 4. Once the PDF is processed, you can start asking questions about its content in the chat interface.
 
-![Chat Interface](path_to_chat_interface_image.png)
+![Chat Interface](sample_image/chat_page.png)
 
 ## Features
 
