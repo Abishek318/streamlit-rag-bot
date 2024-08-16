@@ -2,11 +2,9 @@
 
 A Retrieval-Augmented Generation (RAG) chatbot with memory, built using Streamlit, open-source embeddings, and PDF processing capabilities.
 
-![Streamlit RAG Bot Demo](path_to_your_demo_image.gif)
-
 ## Demo
 
-Try out the live demo: [Streamlit RAG Bot Demo](http://rag-chat-app.streamlit.app/)
+Check out the live demo by clicking the link:: [Streamlit RAG Bot Demo](http://rag-chat-app.streamlit.app/)
 
 ## Description
 
@@ -147,6 +145,6 @@ These can be adjusted in the `streamlit_rag_app.py` file to optimize performance
 
 ## Contact
 
-Mariya Abishek S - mariyaabishek86@gamil.com
+Mariya Abishek S - mariyaabishek86@gamil.com - [Linkedin](https://www.linkedin.com/in/mariya-abishek-s)
 
 Project Link: [https://github.com/Abishek318/streamlit-rag-bot](https://github.com/Abishek318/streamlit-rag-bot)
