@@ -1,6 +1,6 @@
 # Streamlit RAG Bot
 
-A Retrieval-Augmented Generation (RAG) chatbot with memory, built using Streamlit, open-source embeddings, and PDF processing capabilities.
+A Retrieval-Augmented Generation (RAG) chatbot with memory, built using Streamlit, open-source embeddings, Groq API (for LLM model LLAMA 3.1 access), and PDF processing capabilities.
 
 ## Demo
 
